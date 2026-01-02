@@ -11,7 +11,7 @@ export default function AppLayout() {
         <div className="relative">
             <Header /> {/*Nav가 포함됨*/}
             <div className="flex relative">
-            <SideNav></SideNav>
+                <SideNav></SideNav>
                 <MainContent>
                     <Outlet />
                 </MainContent>
