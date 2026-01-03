@@ -2,16 +2,21 @@ import bgImg from "../assets/image/arora.jpg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import FindIdModal from "../modal/FindIdMadal";
-
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Login() {
 
     const [openFindId, setOpenFindId] = useState(false); 
     const [isActive, setIsActive] = useState(false);
+    const [param, setParam] = useState("");
 
 
     return (
         <div className="relative w-screen h-screen overflow-hidden">
+
+
+
             {/* 배경 이미지 */}
             <img
                 src={bgImg}
@@ -19,8 +24,9 @@ export default function Login() {
                 className="w-full h-full object-cover kenburns-bottom isActive"
             />
 
+
             {/* 중앙 정렬 레이어 */}
-            <div className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-500 ${isActive ? "swing-out-left-fwd ":"opacity-100"}`}>
+            <div className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-500 ${isActive ? "swing-out-left-fwd ":" delay-2 opacity-100"}`}>
                 <div className="shadow-2xl     bg-gray-800/50
                                 backdrop-blur-3xl w-[550px] h-[560px] rounded-xl 
                                 flex flex-col items-center scale-in-ver-center relative ">
@@ -32,8 +38,20 @@ export default function Login() {
                         </div>
                     </div>
 
+
+
                     {/* 입력 영역 */}
                     <div className="mt-35 w-full px-16 space-y-6 text-fade-in2 select-none">
+
+                        <div className="fixed right-0 top-0">
+                            <div className="text-gray-300 text-xl m-5">
+                                
+                                <FontAwesomeIcon
+                                        icon={faGlobe}
+                                    
+                                    /></div>
+                        </div>
+
                         
                         {/* ID */}
                         <div className="flex flex-col gap-2">
@@ -113,10 +131,10 @@ export default function Login() {
                                 </button>
                             </Link>
 
-                            <div className="relative group">
+                            <div className="relative group  mt-6">
                                 <Link to={"/"}>
                                 <button
-                                    className="w-full h-11 mt-6 rounded-md bg-indigo-600
+                                    className="w-full h-11 rounded-md bg-indigo-600
                                             text-white font-semibold hover:bg-indigo-700
                                             transition-colors"
                                 >
@@ -152,9 +170,18 @@ export default function Login() {
                             <div onClick={() => {
                                 setOpenFindId(true) 
                                 setIsActive(true)
+                                setParam("FindID")
                             }} className="hover:text-gray-200 transition-colors duration-200 cursor-pointer">아이디 찾기</div>
-                            <div className="hover:text-gray-200 transition-colors duration-200 cursor-pointer">비밀번호 찾기</div>
-                            <div className="hover:text-gray-200 transition-colors duration-200 cursor-pointer">회원가입</div>
+                            <div  onClick={() => {
+                                setOpenFindId(true) 
+                                setIsActive(true)
+                                setParam("FindPassword")
+                            }} className="hover:text-gray-200 transition-colors duration-200 cursor-pointer">비밀번호 찾기</div>
+                            <div  onClick={() => {
+                                setOpenFindId(true) 
+                                setIsActive(true)
+                                setParam("SignUp")
+                            }} className="hover:text-gray-200 transition-colors duration-200 cursor-pointer">회원가입</div>
                             <div className="ml-auto text-[12px] text-gray-500 tracking-widest">© MIMIR</div>
                         </div>
                         
@@ -164,6 +191,7 @@ export default function Login() {
 
             <FindIdModal
                 open={openFindId}
+                param={ param}
                 onClose={() => {
                     setOpenFindId(false)
                     setIsActive(false)
@@ -171,7 +199,9 @@ export default function Login() {
             />
 
 
-
+            <footer className="fixed bottom-0 flex w-screen text-center p-4 text-gray-500">
+                <div className="mx-auto "> © 2025 MIMIR. All rights reserved.</div>
+            </footer>
 
 
 
