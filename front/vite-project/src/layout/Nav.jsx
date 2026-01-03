@@ -23,7 +23,7 @@ export default function Nav() {
                     <Link to="/page4">Page4</Link>
                 </li>
                 <li>
-                    <Link to="/test">테스트</Link>
+                    <Link to="/login">테스트</Link>
                 </li>
             </ul>
 
@@ -69,7 +69,7 @@ export default function Nav() {
                 </li>
 
                 <li>
-                    <Link to="/">Logout</Link>
+                    <Link to="/login">Logout</Link>
                 </li>
             </ul>
         </nav>
