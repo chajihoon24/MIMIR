@@ -2,7 +2,7 @@ function Guide() {
     return (
         <>
             <div className="min-h-screen flex flex-col bg-white rounded-xl shadow mb-4 overflow-hidden">
-                <div className="m-20 w-full h-full flex flex-col gap-8">
+                <div className="m-20  h-full flex flex-col gap-8">
                     {/* 개요 */}
                     <div className="title1 ">컴포넌트 가이드</div>
                     <div className="basic-text">

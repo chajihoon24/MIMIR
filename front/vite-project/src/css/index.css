@@ -18,6 +18,13 @@ h1 {
     line-height: 1.1;
 }
 
+
+hr {
+  border: none;
+  border-top: 1px solid var(--hr-color);
+}
+
+
 .color_container {
     display: flex;
     gap: 30px;
@@ -343,6 +350,9 @@ ul {
     --text-white: white;
 
     --bg-color-1: #ffffff;
+
+    --hr-color:#1f2937 ;
+
 }
 
 .dark {
@@ -367,6 +377,8 @@ ul {
     --text-gray-950: #ffffff;
     --text-black: #ffffff;
     --text-white: black;
+
+    --hr-color:#6b7280 ;
 }
 
 /* 임시 css */
