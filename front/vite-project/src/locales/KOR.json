@@ -1,0 +1,11 @@
+{
+    "login": "로그인",
+    "quick_login": "간편 로그인",
+    "logout": "로그아웃",
+    "id": "아이디",
+    "password": "비밀번호",
+    "find_id": "아이디 찾기",
+    "find_password": "비밀번호 찾기",
+    "remember_id": "로그인 상태 유지",
+    "sign_up": "회원 가입"
+}

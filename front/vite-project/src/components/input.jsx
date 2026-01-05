@@ -1,5 +1,4 @@
 // 체크박스
-
 export function CheckBox1({ id = "", text = "", className = "" }) {
     return (
         <div className={`control-container ml-2 -mt-4 ${className}`}>
@@ -13,6 +12,6 @@ export function CheckBox1({ id = "", text = "", className = "" }) {
     );
 }
 
-export function CheckBox2(id = "", text = "", className = "") {
+export function CheckBox2({ id = "", text = "", className = "" }) {
     return <div className={` ${className}`}></div>;
 }

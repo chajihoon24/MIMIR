@@ -1,12 +1,12 @@
 import { useContext, createContext, useState, useEffect } from "react";
+import i18n from "../config/i18n";
 
 export const AppSettingContext = createContext(null);
 export const useAppSetting = () => useContext(AppSettingContext);
 
 export const AppSettingProvider = ({ children }) => {
     const [theme, setTheme] = useState("light");
-    const [language, setLanguage] = useState("en");
-
+    const [language, setLanguage] = useState("KOR");
 
     useEffect(() => {
         if (theme === "dark") {
@@ -18,16 +18,15 @@ export const AppSettingProvider = ({ children }) => {
         }
     }, [theme]);
 
-
     // 다크모드 토글
     const toggleTheme = () => {
-        setTheme(prev => (prev === "light" ? "dark" : "light"));
-
+        setTheme((prev) => (prev === "light" ? "dark" : "light"));
     };
 
     // 언어 변경
-    const changeLanguage = (lang) => {
-        setLanguage(lang);
+    const changeLanguage = () => {
+        setLanguage((prev) => (prev === "KOR" ? "ENG" : "KOR"));
+        i18n.changeLanguage(language === "KOR" ? "ENG" : "KOR");
     };
 
     return (

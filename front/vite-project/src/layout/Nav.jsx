@@ -2,8 +2,13 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { faBell } from "@fortawesome/free-regular-svg-icons";
+import { useTranslation } from "react-i18next";
+import { useAppSetting } from "../contexts/AppSettingContext";
 
 export default function Nav() {
+    const { t, i18n } = useTranslation();
+    const { language, changeLanguage } = useAppSetting();
+
     return (
         <>
             {/* 왼쪽 Nav */}
@@ -47,14 +52,18 @@ export default function Nav() {
                     </li>
 
                     <li>
-                        <Link to="/">
-                            <div className="flex mt-auto">
-                                <div className="">ENG</div>
-                                <div className="ml-2">
-                                    <FontAwesomeIcon icon={faAngleDown} />
-                                </div>
-                            </div>
-                        </Link>
+                        <div className="flex mt-auto">
+                            <button
+                                className=""
+                                onClick={() => {
+                                    changeLanguage();
+
+                                    console.debug("change language:", language);
+                                }}
+                            >
+                                {language}
+                            </button>
+                        </div>
                     </li>
 
                     <li>
@@ -66,7 +75,7 @@ export default function Nav() {
                                 </div>
                             </div>
 
-                            <div class="ml-4 w-10 h-10 rounded-full bg-blue-300"></div>
+                            <div className="ml-4 w-10 h-10 rounded-full bg-blue-300"></div>
                             <Link to="/">
                                 <div className="ml-4">차지훈 님</div>
                                 <div className="ml-4 text-gray-400">
@@ -77,7 +86,7 @@ export default function Nav() {
                     </li>
 
                     <li>
-                        <Link to="/login">Logout</Link>
+                        <Link to="/login">{t("logout")}</Link>
                     </li>
                 </ul>
             </nav>

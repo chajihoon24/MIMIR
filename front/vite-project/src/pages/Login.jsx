@@ -7,12 +7,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { LoginBtn } from "../components/button";
 import { EasyLogin_tooltip } from "../components/tooltip";
 import { CheckBox1 } from "../components/input";
+import { useTranslation } from "react-i18next";
+import { useAppSetting } from "../contexts/AppSettingContext";
 
 export default function Login() {
     const [openModal, setOpenModal] = useState(false);
     const [isActive, setIsActive] = useState(false);
     const [param, setParam] = useState("");
     const [disabled, setDisabled] = useState(true);
+    const { t } = useTranslation();
+    const { language, changeLanguage } = useAppSetting();
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -49,9 +53,19 @@ export default function Login() {
                     {/* 입력 영역 */}
                     <div className="mt-35 w-full px-16 space-y-6 text-fade-in2 select-none">
                         <div className="fixed right-0 top-0">
-                            <div className="text-gray-300 text-xl m-5">
-                                <FontAwesomeIcon icon={faGlobe} />
-                            </div>
+                            <button className="text-gray-300 text-xl m-5">
+                                <FontAwesomeIcon
+                                    icon={faGlobe}
+                                    onClick={() => {
+                                        changeLanguage();
+
+                                        console.debug(
+                                            "change language:",
+                                            language
+                                        );
+                                    }}
+                                />
+                            </button>
                         </div>
                         {/* ID */}
                         <div className="flex flex-col gap-2">
@@ -59,7 +73,7 @@ export default function Login() {
                                 htmlFor="userId"
                                 className="!text-gray-200 text-sm"
                             >
-                                ID
+                                {t("id")}
                             </label>
                             <input
                                 id="userId"
@@ -88,7 +102,7 @@ export default function Login() {
                                 htmlFor="password"
                                 className="!text-gray-200 text-sm"
                             >
-                                PASSWORD
+                                {t("password")}
                             </label>
                             <input
                                 id="password"
@@ -113,13 +127,13 @@ export default function Login() {
                         <CheckBox1
                             className="my-2"
                             id="keep_logged_yn"
-                            text="로그인 상태 유지"
+                            text={t("remember_id")}
                         />
                         {/* LOGIN BUTTON */}
                         <div className="mt-5 ">
-                            <LoginBtn text="로그인" to="/home" />
+                            <LoginBtn text={t("login")} to="/home" />
                             <div className="relative group  mt-6">
-                                <LoginBtn text="간편 로그인" to="/home" />
+                                <LoginBtn text={t("quick_login")} to="/home" />
                                 <EasyLogin_tooltip />
                             </div>
                         </div>
@@ -132,7 +146,7 @@ export default function Login() {
                                 }}
                                 className="hover:text-gray-200 transition-colors duration-200 cursor-pointer"
                             >
-                                아이디 찾기
+                                {t("find_id")}
                             </div>
                             <div
                                 onClick={() => {
@@ -142,7 +156,7 @@ export default function Login() {
                                 }}
                                 className="hover:text-gray-200 transition-colors duration-200 cursor-pointer"
                             >
-                                비밀번호 찾기
+                                {t("find_password")}
                             </div>
                             <div
                                 onClick={() => {
@@ -152,7 +166,7 @@ export default function Login() {
                                 }}
                                 className="hover:text-gray-200 transition-colors duration-200 cursor-pointer"
                             >
-                                회원가입
+                                {t("sign_up")}
                             </div>
                             <div className="ml-auto text-[12px] !text-gray-500 tracking-widest">
                                 © MIMIR

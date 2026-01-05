@@ -1,0 +1,11 @@
+{
+    "login": "Login",
+    "quick_login": "Quick Login",
+    "logout": "Logout",
+    "id": "ID",
+    "password": "PASSWORD",
+    "find_id": "Find ID",
+    "find_password": "Find Password",
+    "remember_id": "Remember ID",
+    "sign_up": "Sign Up"
+}

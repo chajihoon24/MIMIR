@@ -9,8 +9,8 @@ export default function SignUp() {
 
     return (
         <div className="flex flex-col gap-6 w-[420px] mb-[300px] mr-[25%]">
-            <h2 className="text-5xl text-gray-100 font-bold mb-4">회원가입</h2>
-            <p className="text-gray-300 text-[16px] mb-6">
+            <h2 className="text-5xl !text-gray-100 font-bold mb-4">회원가입</h2>
+            <p className="!text-gray-300 text-[16px] mb-6">
                 필요한 정보를 입력하고 회원가입을 진행해 주세요.
             </p>
 
@@ -23,7 +23,7 @@ export default function SignUp() {
                 className="
           bg-transparent
           border-b border-gray-400
-          text-gray-100
+          !text-gray-100
           placeholder-gray-400
           focus:outline-none
           focus:border-white
@@ -41,7 +41,7 @@ export default function SignUp() {
                 className="
           bg-transparent
           border-b border-gray-400
-          text-gray-100
+          !text-gray-100
           placeholder-gray-400
           focus:outline-none
           focus:border-white
@@ -59,7 +59,7 @@ export default function SignUp() {
                 className="
           bg-transparent
           border-b border-gray-400
-          text-gray-100
+          !text-gray-100
           placeholder-gray-400
           focus:outline-none
           focus:border-white
@@ -77,7 +77,7 @@ export default function SignUp() {
                 className="
           bg-transparent
           border-b border-gray-400
-          text-gray-100
+          !text-gray-100
           placeholder-gray-400
           focus:outline-none
           focus:border-white
@@ -91,7 +91,7 @@ export default function SignUp() {
                 className="
           mt-6
           !bg-[#1a1a1a]
-          text-gray-300
+          !text-gray-300
           font-semibold
           py-3
           rounded-xl

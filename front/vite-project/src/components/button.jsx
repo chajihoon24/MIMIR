@@ -33,13 +33,15 @@ export function SearchButton({ children, ...props }) {
     );
 }
 
+// Login page 용 버튼 컴포넌트
+
 export function LoginBtn({ text, className = "", to = "/", ...props }) {
     return (
         <Link
             to={to}
             className={`
                         w-full h-11 rounded-md bg-[#1a1a1a]
-                      text-white font-semibold
+                      !text-white font-semibold
                         transition-colors
                         flex items-center justify-center
                         ${className}

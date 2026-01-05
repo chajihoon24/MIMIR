@@ -16,7 +16,7 @@ export default function FindIdModal({ open, onClose, param }) {
             {/* 닫기 버튼 */}
             <button
                 onClick={onClose}
-                className="absolute top-6 right-6 text-gray-300 hover:text-white transition"
+                className="absolute top-6 right-6 !text-gray-300 hover:text-white transition"
                 aria-label="닫기"
             >
                 X
