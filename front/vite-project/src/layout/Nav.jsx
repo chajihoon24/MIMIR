@@ -28,7 +28,7 @@ export default function Nav() {
                         <Link to="/page3">{t("nav.platform")}</Link>
                     </li>
                     <li>
-                        <Link to="/test1">{t("test_temp")}</Link>
+                        <Link to="/test">{t("test_temp")}</Link>
                     </li>
                     <li>
                         <Link to="/guide">{t("nav.guide")}</Link>

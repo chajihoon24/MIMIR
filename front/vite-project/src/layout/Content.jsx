@@ -3,7 +3,7 @@ export default function Content({ children }) {
     return (
         <main className="shrink-0 mx-auto w-[1600px]">
             <div className="py-4  h-full">
-                <div className="border-[1px] border-dashed rounded-md border-gray-600 h-full overflow-auto">
+                <div className=" rounded-md border-gray-600 h-full overflow-auto">
                     {children}
                 </div>
             </div>
