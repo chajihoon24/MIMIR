@@ -6,8 +6,8 @@ export function TestMain1600() {
         <>
             <div className="flex-shrink-0 bg-blue-200 w-[100rem] h-full mx-auto flex flex-col justify-center items-center">
                 <h2 className="">Main Layout</h2>
-                <div className="">너비 : 1600px(고정, 표준)</div>
-                <div className="">높이 : 1050px(고정)</div>
+                <div className="info-txt">너비 : 1600px(고정, 표준)</div>
+                <div className="info-txt">높이 : 1050px(고정)</div>
                 <div className="flex gap-6 mt-4 mb-60">
                     {" "}
                     <LinkBtn
@@ -28,8 +28,8 @@ export function TestMain1440() {
         <>
             <div className="flex-shrink-0 bg-blue-200 w-[90rem] h-full mx-auto flex flex-col justify-center items-center">
                 <h2 className="">Main Layout</h2>
-                <div className="">너비 : 1440px(고정, 표준)</div>
-                <div className="">높이 : 1050px(고정)</div>
+                <div className="info-txt">너비 : 1440px(고정, 표준)</div>
+                <div className="info-txt">높이 : 1050px(고정)</div>
                 <div className="flex gap-6 mt-4 mb-60">
                     {" "}
                     <LinkBtn
@@ -56,7 +56,7 @@ export function TestMainCustom() {
         >
             <h2>Main Layout</h2>
 
-            <div>
+            <div className="info-txt">
                 너비 :
                 <input
                     className="ml-2 p-1 border-0 text-right border-b-2 border-black w-20 bg-blue-200"
@@ -69,7 +69,7 @@ export function TestMainCustom() {
                 px
             </div>
 
-            <div>높이 : 1050px(고정)</div>
+            <div className="info-txt">높이 : 1050px(고정)</div>
             <div className="flex gap-6 mt-4 mb-60">
                 {" "}
                 <LinkBtn

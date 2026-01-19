@@ -21,7 +21,7 @@ footer : 페이지 최하단
 */
 export default function AppLayout() {
     return (
-        <div className="h-screen">
+        <div className="h-screen ">
             <Header />
             <main className="flex flex-col relative w-full h-[calc(100vh-60px)]">
                 <div className="flex w-full h-full">

@@ -38,7 +38,7 @@ export default function SideNav() {
             "시스템관리",
         ];
     return (
-        <div className="w-[250px] bg-white font-bold text-[16px] text-gray-700  fixed top-[56px] h-[calc(100vh-3.5rem)] flex-col z-50 flex">
+        <div className="w-[250px] bg-white font-bold text-[16px] text-gray-700  fixed top-[60px] h-[calc(100vh-3.5rem)] flex-col z-50 flex">
             {/*상단*/}
             <div className="flex py-2 pl-6 bg-gray-300 text-white">
                 <div className="text-xl">MIMIR</div>

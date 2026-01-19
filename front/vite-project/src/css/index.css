@@ -3,11 +3,8 @@
 @import "handsontable/styles/ht-theme-main.min.css";
 @plugin "daisyui";
 
-body {
-    position: relative;
-    font-family: "Pretendard", sans-serif;
-    margin: 0;
-    background-color: var(--app-bg-color);
+button {
+    cursor: pointer;
 }
 /* 초기화 */
 h1,

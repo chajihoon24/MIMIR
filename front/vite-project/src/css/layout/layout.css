@@ -1,0 +1,18 @@
+body {
+    position: relative;
+    font-family: "Pretendard", sans-serif;
+    margin: 0;
+    background-color: var(--app-bg-color);
+    min-width: 1865px;
+}
+
+:root {
+    --app-bg-color: #f3f4f6;
+}
+.dark {
+    --app-bg-color: #111827;
+}
+
+.app-bg {
+    background-color: var(--app-bg-color);
+}

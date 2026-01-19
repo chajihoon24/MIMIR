@@ -1,5 +1,5 @@
 @import "tailwindcss";
-/* 타이틀 스케일은 3가지 계층 구조로 되어 있습니다. */
+/* 타이틀 스케일은 3가지 계층 구조로 되어 있습니다. =====================================*/
 h1 {
     font-size: 3rem;
     font-weight: 700;
@@ -21,24 +21,23 @@ h3 {
     margin-top: 2.5rem;
 }
 
-/* 본문 텍스트 스타일. */
+/* 본문 텍스트 스타일.=============================================================== */
 
 .info-tit {
     font-size: 1.2rem;
     line-height: 1.5;
     font-weight: 700;
     color: #333333;
-    margin-bottom: 1rem;
 }
 
 .info-txt {
     font-size: 1rem;
     line-height: 1.5;
     font-weight: 400;
-    color: #4a5565;
+    color: #2d323a;
 }
 
-.info-Subtxt {
+.info-sub {
     font-size: 1rem;
     line-height: 1.3;
     font-weight: 400;
@@ -49,7 +48,9 @@ h3 {
     margin-top: 40px;
 }
 
-.nav-logo {
+
+/* navbar 텍스트 스타일. ==================================================================*/
+.nav-logo {/*로고 스타일*/
     @apply tracking-wide;
     color: var(--text-black);
     font-weight: 700;
@@ -57,4 +58,11 @@ h3 {
 }
 .nav-app-ver {
     @apply ml-3 text-gray-400 text-xs;
+}
+
+.nav-txt {/*App 버젼 표기 스타일*/
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #4a5565;
 }

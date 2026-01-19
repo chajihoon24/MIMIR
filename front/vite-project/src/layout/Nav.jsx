@@ -14,7 +14,7 @@ export default function Nav() {
             {/* 왼쪽 Nav */}
 
             <nav className="ml-20 justify-between info-txt w-full hidden md:flex">
-                <ul className="grow items-center flex justify-center gap-8 whitespace-nowrap">
+                <ul className="nav-txt grow items-center flex justify-center gap-8 whitespace-nowrap">
                     <li>
                         <Link to="/dashboard">{t("nav.dashboard")}</Link>
                     </li>
