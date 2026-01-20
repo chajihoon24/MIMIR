@@ -33,19 +33,14 @@ export default function Nav() {
                     <li>
                         <Link to="/guide">{t("nav.guide")}</Link>
                     </li>
+                    <li>
+                        <Link to="/template">템플릿</Link>
+                    </li>
                 </ul>
 
                 {/* 오른쪽 Nav */}
 
                 <ul className="ml-auto flex-grow items-center flex justify-end gap-8 text-[14px] whitespace-nowrap">
-                    <li>
-                        <button
-                            onClick={devModeToggle}
-                            className="basic-text p-2 bg-gray-400 rounded-md"
-                        >
-                            devMode
-                        </button>
-                    </li>
                     <li>
                         <div className="flex mt-auto">
                             <button

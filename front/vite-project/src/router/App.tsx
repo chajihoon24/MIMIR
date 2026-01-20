@@ -4,6 +4,7 @@ import { AppProvider } from "../contexts/AppProvider";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AuthLayout from "../layout/AuthLayout";
 import AppLayout from "../layout/AppLayout";
+import Template from "../pages/template";
 
 // 인증 관련
 const Login = lazy(() => import("../pages/Login"));
@@ -57,6 +58,7 @@ function App() {
                             <Route path="/page4" element={<Page4 />} />
                             <Route path="/test" element={<Test1 />} />
                             <Route path="/guide" element={<Guide />} />
+                            <Route path="/template" element={<Template />} />
                         </Route>
 
                         {/* Test 페이지 */}

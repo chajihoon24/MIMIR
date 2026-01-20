@@ -3,24 +3,25 @@ import { BreadCrumbItem } from "./breadcrumb.types";
 
 interface BreadCrumbProps {
     items?: BreadCrumbItem[];
+    className?: string;
 }
 
-export function BreadCrumb({ items = [] }: BreadCrumbProps) {
+export function BreadCrumb({ className = "", items = [] }: BreadCrumbProps) {
     return (
         <nav
             aria-label="Breadcrumb"
-            className="mb-10 flex items-center text-gray-600"
+            className={`flex items-center text-gray-600 ${className}`}
         >
             {/* 홈 아이콘 */}
             <Link
                 to="/"
-                className="flex items-center hover:text-gray-900 mb-1"
+                className="flex items-center hover:text-gray-900"
                 aria-label="Home"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
+                    width="18"
+                    height="18"
                     viewBox="0 -960 960 960"
                     fill="currentColor"
                 >
@@ -39,13 +40,13 @@ export function BreadCrumb({ items = [] }: BreadCrumbProps) {
                         {item.href && !isLast ? (
                             <Link
                                 to={item.href}
-                                className="hover:text-gray-900 hover:underline"
+                                className="hover:text-gray-900 hover:underline text-[14px]"
                             >
                                 {item.label}
                             </Link>
                         ) : (
                             <span
-                                className="font-medium text-gray-600"
+                                className="text-[14px] text-gray-600"
                                 aria-current="page"
                             >
                                 {item.label}
