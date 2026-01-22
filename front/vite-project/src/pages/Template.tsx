@@ -1,92 +1,70 @@
 import { useState } from "react";
 import { PageHeader } from "../components/template/common/PageHeader";
-import { SearchInput } from "../components/input/Input";
+import { SearchInput, SearchSelect } from "../components/input/Input";
+import { Link } from "react-router-dom";
+import { LinkBtn } from "../components/button/button";
+import { SearchForm } from "../components/template/common/SearchForm";
+import { SearchDatePicker } from "../components/datepicker/datepicker";
 
 export default function Template() {
     const [isBookmark, setBookmark] = useState(false);
 
-    const [search1, setSearch1] = useState("")
-    const [combo]
+    const [search1, setSearch1] = useState("");
 
+    const [dept, setDept] = useState("");
 
+    const [status, setStatus] = useState("");
+
+    const deptOptions = [
+        { label: "인사부", value: "HR" },
+        { label: "시설관리부", value: "FM" },
+        { label: "행정부", value: "ADM" },
+        { label: "개발부", value: "DEV" },
+    ];
+
+    const statusOptions = [
+        { label: "재직", value: "ACTIVE" },
+        { label: "휴직", value: "LEAVE" },
+        { label: "퇴직", value: "RESIGNED" },
+    ];
 
     return (
         <div>
             <div className="h-400 bg-white rounded-b-md rounded-t-sm">
                 <PageHeader />
-                <div className="border-b-[1px] border-gray-300"></div>
-                {/* 조회란 */}
-                <div className="px-8 py-4 bg-gray-50 border-b border-gray-200">
-                    <div className="flex items-center gap-6">
-                        {/* 이름 */}
-                        <SearchInput
-                            label="이름"
-                            type="text"
-                            placeholder="이름을 입력하세요"
-                            value={search1}
-                            width="md"
-                            onChange={setSearch1}
-                        />
-                        {/* 부서 */}
-                        <div className="flex items-center gap-2">
-                            <label className="text-sm font-semibold text-gray-600 w-16">
-                                부서
-                            </label>
-                            <select
-                                className="
-                                w-40 px-2 py-1.5
-                                border border-gray-300 rounded
-                                text-sm bg-white
-                                "
-                            >
-                                <option>전체</option>
-                                <option>인사팀</option>
-                                <option>재무팀</option>
-                                <option>개발팀</option>
-                            </select>
-                        </div>
-                        {/* 상태 */}
-                        <div className="flex items-center gap-2">
-                            <label className="text-sm font-semibold text-gray-600 w-16">
-                                상태
-                            </label>
-                            <select
-                                className="
-                                w-32 px-2 py-1.5
-                                border border-gray-300 rounded
-                                text-sm bg-white
-                                "
-                            >
-                                <option>전체</option>
-                                <option>재직</option>
-                                <option>휴직</option>
-                                <option>퇴직</option>
-                            </select>
-                        </div>
-                        {/* 버튼 영역 */}
-                        <div className="flex items-center gap-2 ml-auto">
-                            <button
-                                className="
-                                px-4 py-1.5 rounded
-                                bg-blue-600 text-white text-sm font-semibold
-                                hover:bg-blue-700
-                                "
-                            >
-                                조회
-                            </button>
-
-                            <button
-                                className="
-                                px-4 py-1.5 rounded
-                                bg-gray-200 text-gray-700 text-sm
-                                hover:bg-gray-300
-                                "
-                            >
-                                초기화
-                            </button>
-                        </div>
+                {/*START 조회란============================================================================================== */}
+                <SearchForm>
+                    <SearchInput
+                        label="이름"
+                        type="text"
+                        placeholder="이름을 입력하세요"
+                        value={search1}
+                        width="md"
+                        onChange={setSearch1}
+                    />
+                    <SearchSelect
+                        label="부서"
+                        onChange={setDept}
+                        options={deptOptions}
+                        value={dept}
+                        width="sm"
+                        defaultOption="all"
+                    />
+                    <SearchSelect
+                        label="상태"
+                        onChange={setStatus}
+                        options={statusOptions}
+                        value={status}
+                        width="sm"
+                        defaultOption="select"
+                    />
+                    <SearchDatePicker label="조회 기간"/>
+                    <div className="flex items-center gap-2 ml-auto">
+                        <LinkBtn color="basic" text="조회" to={"#"} />
+                        <LinkBtn color="basic" text="초기화" to={"#"} />
                     </div>
-                </div>
+                </SearchForm>
+                {/* END 조회란============================================================================================== */}
                 <div className=" flex text-gray-500 text-sm font-semibold">
                     <div className="ml-auto mt-1 mr-4">마지막 조회: 2분 전</div>
                 </div>
