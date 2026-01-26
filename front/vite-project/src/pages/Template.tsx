@@ -72,6 +72,7 @@ export default function Template() {
                 <div className=" flex text-gray-500 text-sm font-semibold">
                     <div className="ml-auto mt-1 mr-4">마지막 조회: 2분 전</div>
                 </div>
+                
 
                 <div className="px-4 py-1">
                     <div className="overflow-x-auto border border-gray-400 rounded-sm">

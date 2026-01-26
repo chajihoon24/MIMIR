@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { faBell } from "@fortawesome/free-regular-svg-icons";
 import { useTranslation } from "react-i18next";
 import { useAppSetting } from "../contexts/AppSettingContext";
@@ -16,25 +15,25 @@ export default function Nav() {
             <nav className="ml-20 justify-between info-txt w-full hidden md:flex">
                 <ul className="nav-txt grow items-center flex justify-center gap-8 whitespace-nowrap">
                     <li>
-                        <Link to="/dashboard">{t("nav.dashboard")}</Link>
+                        <Link className="p-1.5" to="/dashboard">{t("nav.dashboard")}</Link>
                     </li>
                     <li>
-                        <Link to="/page1">{t("nav.bookmarks")}</Link>
+                        <Link className="p-1.5" to="/page1">{t("nav.bookmarks")}</Link>
                     </li>
                     <li>
-                        <Link to="/page2">{t("nav.releases")}</Link>
+                        <Link className="p-1.5" to="/page2">{t("nav.releases")}</Link>
                     </li>
                     <li>
-                        <Link to="/page3">{t("nav.platform")}</Link>
+                        <Link className="p-1.5" to="/page3">{t("nav.platform")}</Link>
                     </li>
                     <li>
-                        <Link to="/test">{t("test_temp")}</Link>
+                        <Link className="p-1.5" to="/test">{t("test_temp")}</Link>
                     </li>
                     <li>
-                        <Link to="/guide">{t("nav.guide")}</Link>
+                        <Link className="p-1.5" to="/guide">{t("nav.guide")}</Link>
                     </li>
                     <li>
-                        <Link to="/template">템플릿</Link>
+                        <Link className="p-1.5" to="/template">템플릿</Link>
                     </li>
                 </ul>
 
