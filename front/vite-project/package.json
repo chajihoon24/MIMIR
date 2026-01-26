@@ -18,6 +18,7 @@
         "@tailwindcss/postcss": "^4.1.18",
         "clsx": "^2.1.1",
         "daisyui": "^5.5.14",
+        "date-fns": "^4.1.0",
         "handsontable": "^16.2.0",
         "i18next": "^25.7.3",
         "liquid-glass-react": "^1.1.1",

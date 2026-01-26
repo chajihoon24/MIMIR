@@ -215,10 +215,10 @@ export function IconEllipsis({
 
 export function IconCalendar({
     size = DEFAULT_SIZE,
-    className="",
+    className = "",
     fill = "none",
     weight = DEFAULT_WEIGHT,
-}: IconProps){
+}: IconProps) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -230,7 +230,7 @@ export function IconCalendar({
             stroke-width={weight}
             stroke-linecap="round"
             stroke-linejoin="round"
-            className={`lucide lucide-calendar-days-icon lucide-calendar-days relative ${className}`}
+            className={`lucide lucide-calendar-days-icon lucide-calendar-days ${className}`}
         >
             <path d="M8 2v4" />
             <path d="M16 2v4" />

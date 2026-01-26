@@ -4,7 +4,8 @@ import { SearchInput, SearchSelect } from "../components/input/Input";
 import { Link } from "react-router-dom";
 import { LinkBtn } from "../components/button/button";
 import { SearchForm } from "../components/template/common/SearchForm";
-import { SearchDatePicker } from "../components/datepicker/datepicker";
+import { SearchDateRangePicker } from "../components/datepicker/datepicker";
+import { BtnWrapper } from "../components/template/common/BtnWrapper";
 
 export default function Template() {
     const [isBookmark, setBookmark] = useState(false);
@@ -58,11 +59,14 @@ export default function Template() {
                         width="sm"
                         defaultOption="select"
                     />
-                    <SearchDatePicker label="조회 기간"/>
-                    <div className="flex items-center gap-2 ml-auto">
+                    <SearchDateRangePicker
+                        label="조회 기간"
+                        type="YYYY-MM-DD"
+                    />
+                    <BtnWrapper>
                         <LinkBtn color="basic" text="조회" to={"#"} />
                         <LinkBtn color="basic" text="초기화" to={"#"} />
-                    </div>
+                    </BtnWrapper>
                 </SearchForm>
                 {/* END 조회란============================================================================================== */}
                 <div className=" flex text-gray-500 text-sm font-semibold">

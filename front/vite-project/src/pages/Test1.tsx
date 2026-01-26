@@ -5,15 +5,17 @@ import { Tabs } from "../components/tabs/Tabs";
 import { LinkBtn as Btn } from "../components/button/button";
 import { PageLoading } from "../components/loading/Loading";
 import { cn } from "../config/tailwind-merge";
+import { SearchDateCustomPicker, SearchDateRangePicker } from "../components/datepicker/datepicker";
 
 function Test1() {
-    type MyTabKey = "info" | "input" | "button" | "checkbox";
+    type MyTabKey = "info" | "input" | "button" | "checkbox" | "datePicker";
 
     const TABS: readonly TabItem<MyTabKey>[] = [
         { key: "info", label: "정보" },
         { key: "input", label: "Input" },
         { key: "button", label: "Button" },
         { key: "checkbox", label: "Checkbox" },
+        { key: "datePicker", label: "DatePicker" },
     ];
     const [activeTab, setActiveTab] = useState<MyTabKey>("info");
 
@@ -223,6 +225,99 @@ function Test1() {
                     >
                         <h2 className="text-lg font-semibold">Checkbox</h2>
                         <div className="info-tit">Checkbox 컴포넌트입니다.</div>
+                    </div>
+
+                    <div
+                        hidden={activeTab !== "datePicker"}
+                        className="space-y-4"
+                    >
+                        <h2 className="text-lg font-semibold">DatePicker</h2>
+
+                        <p className="text-sm text-gray-600">
+                            날짜 및 기간 선택을 위한 공통 DatePicker
+                            컴포넌트입니다. 검색 조건, 조회 조건 화면에서
+                            사용됩니다.
+                        </p>
+
+                        {/* ===== 단일 날짜 ===== */}
+                        <div className="border rounded p-4 space-y-2">
+                            <h3 className="text-sm font-semibold text-gray-700">
+                                ▸ 단일 날짜 선택
+                            </h3>
+
+                            <p className="info-txt text-gray-500">
+                                연 / 월 / 일 중 선택 타입에 따라 하나의 날짜를
+                                선택합니다.
+                            </p>
+
+                            <div className="flex flex-col gap-2">
+                                <SearchDateCustomPicker
+                                    label="년도"
+                                    type="YYYY"
+                                />
+                                <SearchDateCustomPicker
+                                    label="월별"
+                                    type="MM"
+                                />
+                                <SearchDateCustomPicker
+                                    label="일자"
+                                    type="YYYY-MM-DD"
+                                />
+                            </div>
+                        </div>
+
+                        {/* ===== 기간 선택 ===== */}
+                        <div className="border rounded p-4 space-y-2">
+                            <h3 className="text-sm font-semibold text-gray-700">
+                                ▸ 기간 선택
+                            </h3>
+
+                            <p className="info-txt text-gray-500">
+                                시작일 ~ 종료일 형태의 조회 기간 선택에
+                                사용됩니다.
+                            </p>
+
+                            <SearchDateRangePicker
+                                label="조회 기간 (년도)"
+                                type="YYYY"
+                            />
+                            <SearchDateRangePicker
+                                label="조회 기간 (월별)"
+                                type="MM"
+                            />
+                            <SearchDateRangePicker
+                                label="조회 기간 (일별)"
+                                type="YYYY-MM-DD"
+                            />
+                        </div>
+
+                        {/* ===== 사용 가이드 ===== */}
+                        <div className="bg-gray-50 border rounded p-4">
+                            <h3 className="text-sm font-semibold text-gray-700 mb-2">
+                                ▸ 사용 가이드
+                            </h3>
+
+                            <ul className="info-txt space-y-1 list-disc list-inside">
+                                <li>
+                                    검색 조건 영역에서는 단일 날짜 또는 기간
+                                    선택 중 하나를 사용합니다.
+                                </li>
+                                <li>
+                                    서버 전송 시 Date 객체는 문자열 포맷으로
+                                    변환해야 합니다.
+                                </li>
+                                <li>
+                                    기본 포맷은{" "}
+                                    <code className="px-1 bg-white border rounded">
+                                        YYYY-MM-DD
+                                    </code>{" "}
+                                    입니다.
+                                </li>
+                                <li>
+                                    아이콘 클릭은 입력창과 동일하게 동작합니다.
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </BasicBox>
