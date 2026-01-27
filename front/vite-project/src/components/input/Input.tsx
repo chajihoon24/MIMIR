@@ -4,13 +4,14 @@
     사용자가 입력하는 값을 받습니다.
  */
 
-type InputWidth = "sm" | "md" | "lg" | "xl";
+type InputWidth = "sm" | "md" | "lg" | "xl" | "full";
 
 const widthClassMap: Record<InputWidth, string> = {
     sm: "w-32",
     md: "w-48",
     lg: "w-64",
     xl: "w-80",
+    full: "w-full",
 } as const;
 
 interface SearchInputProps {
@@ -44,7 +45,7 @@ export function SearchInput({
                 className={`
                     ${widthClassMap[width]}
                     px-3 py-1.5
-                    border border-gray-300 rounded
+                    border border-gray-300 rounded-xs
                     text-sm
                     focus:outline-none focus:ring-1 focus:ring-blue-400
                 `}
@@ -115,6 +116,53 @@ export function SearchSelect({
                     </option>
                 ))}
             </select>
+        </div>
+    );
+}
+//===========================================================================
+// [form input]
+
+interface FormInputProps {
+    type?: "text" | "number" | "email";
+    label: string;
+    placeholder?: string;
+    value: string;
+    onChange: (value: string) => void;
+    width?: InputWidth; // px 기준
+    required?: boolean;
+}
+
+export function FormInput({
+    type,
+    label,
+    placeholder = "",
+    value,
+    onChange,
+    width,
+    required,
+}: FormInputProps) {
+    return (
+        <div className="flex items-center gap-2">
+            <label className="relative my-auto font-semibold text-gray-700 w-40">
+                {label}{" "}
+                {required && (
+                    <span className="absolute  ml-1 -top-1 text-red-500">*</span> // 🔴 필수 표시
+                )}
+            </label>
+
+            <input
+                type={type}
+                placeholder={placeholder}
+                value={value}
+                onChange={(e) => onChange(e.target.value)}
+                className={`
+                    ${widthClassMap[width]}
+                    px-3 py-1.5
+                    border border-gray-300 rounded-sm
+                    text-sm
+                    focus:outline-none focus:ring- focus:ring-gray-500
+                `}
+            />
         </div>
     );
 }

@@ -29,6 +29,3 @@ export function EasyLogin_tooltip() {
         </div>
     );
 }
-export function Tooltip() {
-    return <div></div>;
-}

@@ -3,11 +3,20 @@ import { BasicBox } from "../components/box";
 import { TabItem } from "../components/tabs/tabs.types";
 import { Tabs } from "../components/tabs/Tabs";
 import { LinkBtn as Btn } from "../components/button/button";
-import { PageLoading } from "../components/loading/Loading";
 import { cn } from "../config/tailwind-merge";
-import { SearchDateCustomPicker, SearchDateRangePicker } from "../components/datepicker/datepicker";
+import {
+    SearchDateCustomPicker,
+    SearchDateRangePicker,
+} from "../components/datepicker/datepicker";
+import { FormInput } from "@/components/input/Input";
+import { Checkbox } from "@/components/checkbox/Checkbox";
 
 function Test1() {
+    let [input1, setInput1] = useState({ A: "", B: "", C: "", D: "", E: "" });
+    let [check1, setCheck1] = useState(false);
+    let [check2, setCheck2] = useState(false);
+    let [check3, setCheck3] = useState(false);
+
     type MyTabKey = "info" | "input" | "button" | "checkbox" | "datePicker";
 
     const TABS: readonly TabItem<MyTabKey>[] = [
@@ -46,6 +55,25 @@ function Test1() {
                     <div hidden={activeTab !== "input"} className="space-y-2">
                         <h2 className="text-lg font-semibold">Input</h2>
                         <p className="text-gray-600">세팅 탭 내용입니다.</p>
+                        <FormInput
+                            label="성명"
+                            type="text"
+                            width="lg"
+                            placeholder="성명을 입력해주세요"
+                            required
+                        />
+                        <FormInput
+                            label="사번"
+                            type="text"
+                            width="lg"
+                            placeholder="사번을 입력해주세요"
+                        />
+                        <FormInput
+                            label="이메일"
+                            type="text"
+                            width="lg"
+                            placeholder="이메일을 입력해주세요"
+                        />
                     </div>
 
                     <div hidden={activeTab !== "button"} className="space-y-2">
@@ -225,6 +253,21 @@ function Test1() {
                     >
                         <h2 className="text-lg font-semibold">Checkbox</h2>
                         <div className="info-tit">Checkbox 컴포넌트입니다.</div>
+                        <Checkbox
+                            label="이용약관 동의 (필수)"
+                            checked={check1}
+                            onChange={setCheck1}
+                        />
+                        <Checkbox
+                            label="개인정보 수집 및 이용 동의 (필수)"
+                            checked={check2}
+                            onChange={setCheck2}
+                        />
+                        <Checkbox
+                            label="마케팅 정보 수신 동의 (선택)"
+                            checked={check3}
+                            onChange={setCheck3}
+                        />
                     </div>
 
                     <div
@@ -233,16 +276,16 @@ function Test1() {
                     >
                         <h2 className="text-lg font-semibold">DatePicker</h2>
 
-                        <p className="text-sm text-gray-600">
+                        <p className="info-txt">
                             날짜 및 기간 선택을 위한 공통 DatePicker
                             컴포넌트입니다. 검색 조건, 조회 조건 화면에서
                             사용됩니다.
                         </p>
 
                         {/* ===== 단일 날짜 ===== */}
-                        <div className="border rounded p-4 space-y-2">
-                            <h3 className="text-sm font-semibold text-gray-700">
-                                ▸ 단일 날짜 선택
+                        <div className="p-4 space-y-2">
+                            <h3 className="text-sm font-semibold">
+                                단일 날짜 선택
                             </h3>
 
                             <p className="info-txt text-gray-500">
@@ -267,10 +310,8 @@ function Test1() {
                         </div>
 
                         {/* ===== 기간 선택 ===== */}
-                        <div className="border rounded p-4 space-y-2">
-                            <h3 className="text-sm font-semibold text-gray-700">
-                                ▸ 기간 선택
-                            </h3>
+                        <div className="border-t border-gray-300 p-4 space-y-2">
+                            <h3 className="text-sm font-semibold">기간 선택</h3>
 
                             <p className="info-txt text-gray-500">
                                 시작일 ~ 종료일 형태의 조회 기간 선택에
@@ -292,9 +333,9 @@ function Test1() {
                         </div>
 
                         {/* ===== 사용 가이드 ===== */}
-                        <div className="bg-gray-50 border rounded p-4">
-                            <h3 className="text-sm font-semibold text-gray-700 mb-2">
-                                ▸ 사용 가이드
+                        <div className="bg-gray-50 border-t border-gray-300 p-4">
+                            <h3 className="text-sm font-semibold mb-2">
+                                사용 가이드
                             </h3>
 
                             <ul className="info-txt space-y-1 list-disc list-inside">

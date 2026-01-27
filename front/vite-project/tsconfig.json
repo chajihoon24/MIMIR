@@ -1,22 +1,25 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "compilerOptions": {
+        "target": "ESNext",
+        "lib": ["ESNext", "DOM", "DOM.Iterable"],
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["src/*"]
+        },
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
 
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
+        "jsx": "react-jsx",
 
-    "jsx": "react-jsx",
+        "allowJs": true,
+        "checkJs": false,
 
-    "allowJs": true,
-    "checkJs": false,
+        "strict": false,
 
-    "strict": false,
+        "isolatedModules": true,
+        "noEmit": true,
 
-    "isolatedModules": true,
-    "noEmit": true,
-
-    "skipLibCheck": true
-  },
-  "include": ["src"]
+        "skipLibCheck": true
+    },
+    "include": ["src"]
 }
