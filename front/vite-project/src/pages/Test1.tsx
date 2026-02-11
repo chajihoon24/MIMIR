@@ -10,6 +10,12 @@ import {
 } from "../components/datepicker/datepicker";
 import { FormInput } from "@/components/input/Input";
 import { Checkbox } from "@/components/checkbox/Checkbox";
+import {
+    Accordion,
+    AccordionHeader,
+    AccordionItem,
+    AccordionPanel,
+} from "@/components/accordion/Accordion";
 
 function Test1() {
     let [input1, setInput1] = useState({ A: "", B: "", C: "", D: "", E: "" });
@@ -17,7 +23,13 @@ function Test1() {
     let [check2, setCheck2] = useState(false);
     let [check3, setCheck3] = useState(false);
 
-    type MyTabKey = "info" | "input" | "button" | "checkbox" | "datePicker";
+    type MyTabKey =
+        | "info"
+        | "input"
+        | "button"
+        | "checkbox"
+        | "datePicker"
+        | "accordion";
 
     const TABS: readonly TabItem<MyTabKey>[] = [
         { key: "info", label: "정보" },
@@ -25,6 +37,7 @@ function Test1() {
         { key: "button", label: "Button" },
         { key: "checkbox", label: "Checkbox" },
         { key: "datePicker", label: "DatePicker" },
+        { key: "accordion", label: "Accordion" },
     ];
     const [activeTab, setActiveTab] = useState<MyTabKey>("info");
 
@@ -358,6 +371,92 @@ function Test1() {
                                     아이콘 클릭은 입력창과 동일하게 동작합니다.
                                 </li>
                             </ul>
+                        </div>
+                    </div>
+                    <div
+                        hidden={activeTab !== "accordion"}
+                        className="space-y-2"
+                    >
+                        <h2 className="text-lg font-semibold">Accodian</h2>
+                        <p className="text-gray-600">Accodian 내용입니다.</p>
+                        <div className="mt-4 flex w-2/3 justify-center items-center">
+                            <Accordion defaultOpen="item1">
+                                <AccordionItem id="item1">
+                                    <AccordionHeader id="item1">
+                                        이용약관 동의 (필수)
+                                    </AccordionHeader>
+
+                                    <AccordionPanel id="item1">
+                                        <p>
+                                            본 약관은 회사가 제공하는 서비스의
+                                            이용과 관련하여 회사와 이용자 간의
+                                            권리, 의무 및 책임사항을 규정함을
+                                            목적으로 합니다.
+                                        </p>
+                                    </AccordionPanel>
+
+                                    <AccordionPanel id="item1">
+                                        <h4 className="font-semibold mb-2">
+                                            제 2 조 (정의)
+                                        </h4>
+                                        <p>
+                                            “이용자”란 본 약관에 따라 회사가
+                                            제공하는 서비스를 이용하는 회원 및
+                                            비회원을 말합니다.
+                                        </p>
+                                    </AccordionPanel>
+
+                                    <AccordionPanel id="item1">
+                                        <h4 className="font-semibold mb-2">
+                                            제 3 조 (약관의 효력)
+                                        </h4>
+                                        <p>
+                                            본 약관은 서비스를 이용하고자 하는
+                                            모든 이용자에게 그 효력이
+                                            발생합니다.
+                                        </p>
+                                    </AccordionPanel>
+
+                                    <AccordionPanel id="item1">
+                                        <h4 className="font-semibold mb-2">
+                                            제 4 조 (약관의 변경)
+                                        </h4>
+                                        <p>
+                                            회사는 관련 법령을 위배하지 않는
+                                            범위에서 본 약관을 변경할 수 있으며,
+                                            변경된 약관은 공지 후 효력이
+                                            발생합니다.
+                                        </p>
+                                    </AccordionPanel>
+                                </AccordionItem>
+
+                                <AccordionItem id="item2">
+                                    <AccordionHeader id="item2">
+                                        개인정보 수집 및 이용 동의 (필수)
+                                    </AccordionHeader>
+                                    <AccordionPanel id="item2">
+                                        <p>
+                                            회사는 서비스 제공을 위해 최소한의
+                                            개인정보를 수집하며, 수집된 정보는
+                                            관련 법령에 따라 안전하게
+                                            보관됩니다.
+                                        </p>
+                                    </AccordionPanel>
+                                </AccordionItem>
+                                <AccordionItem id="item3">
+                                    <AccordionHeader id="item3">
+                                        개인정보 수집 및 이용 동의 (필수)
+                                    </AccordionHeader>
+                                    <AccordionPanel id="item3">
+                                        <p>
+                                            회사는 서비스 제공을 위해 최소한의
+                                            개인정보를 수집하며, 수집된 정보는
+                                            관련 법령에 따라 안전하게
+                                            보관됩니다.
+                                        </p>
+                                    </AccordionPanel>
+                                </AccordionItem>
+                            </Accordion>
                         </div>
                     </div>
                 </div>

@@ -213,15 +213,15 @@ function Guide() {
                     <div>for Free!</div>
                     <div>7.1.0v</div>
                 </button>
-                <dialog id="my_modal_1" class="modal">
-                    <div class="modal-box">
-                        <h3 class="text-lg font-bold">Hello!</h3>
-                        <p class="py-4">
+                <dialog id="my_modal_1" className="modal">
+                    <div className="modal-box">
+                        <h3 className="text-lg font-bold">Hello!</h3>
+                        <p className="py-4">
                             Press ESC key or click the button below to close
                         </p>
-                        <div class="modal-action">
+                        <div className="modal-action">
                             <form method="dialog">
-                                <button class="btn">Close</button>
+                                <button className="btn">Close</button>
                             </form>
                         </div>
                     </div>
@@ -230,7 +230,7 @@ function Guide() {
                 <div className="border-t-[1px] border-gray-500 w-[400px] "></div>
 
                 <button className="hover:text-gray-200 hover:bg-blue-500 text-blue-950  cursor-pointer transition  shadow-sm shadow-gray-950/55 bg-blue-400 rounded-xl px-7 py-2">
-                    <div class="text-xl font-bold ">예약 하기</div>
+                    <div className="text-xl font-bold ">예약 하기</div>
                 </button>
                 <div className="basic-text text-gray-200 leading-relaxed">
                     <div className="">
@@ -251,25 +251,25 @@ function Guide() {
                     <div className="bg-[#15151b] gap-4 w-full h-[300px] mt-3 rounded-lg flex flex-col items-center justify-center basic-text text-gray-200 ">
                         <div className="-mt-5 -mb-3">국민연금</div>
                         <progress
-                            class="progress progress-info w-56"
+                            className="progress progress-info w-56"
                             value="15"
                             max="100"
                         ></progress>
                         <div className="-mb-3">고용보험</div>
                         <progress
-                            class="progress progress-info w-56"
+                            className="progress progress-info w-56"
                             value="60"
                             max="100"
                         ></progress>
                         <div className="-mb-3">건강보험</div>
                         <progress
-                            class="progress progress-info w-56"
+                            className="progress progress-info w-56"
                             value="30"
                             max="100"
                         ></progress>
                         <div className="-mb-3">산재보험</div>
                         <progress
-                            class="progress progress-info w-56"
+                            className="progress progress-info w-56"
                             value="70"
                             max="100"
                         ></progress>
@@ -316,7 +316,7 @@ function Guide() {
                                 ></circle>
                             </g>
                         </svg>
-                        <span class="inline-block align-middle ms-1 w-[400px] ml-4">
+                        <span className="inline-block align-middle ms-1 w-[400px] ml-4">
                             두 번 탭하여 Google에서 검색합니다. 신고하기. 취소.
                             확인. 삭제. 인기 검색어.재 구글은 미국 캘리포니아
                             주에 있는 빌딩을 본사로 사용합니다.
@@ -361,7 +361,7 @@ function Guide() {
                                 ></circle>
                             </g>
                         </svg>
-                        <span class="inline-block align-middle ms-1 w-[400px] ml-4">
+                        <span className="inline-block align-middle ms-1 w-[400px] ml-4">
                             1월 9일 - 1월 16일로 한 주 연기되었으니 일정 혼동
                             없으시도록 꼭 참고하여 주세요.
                         </span>
@@ -405,7 +405,7 @@ function Guide() {
                                 ></circle>
                             </g>
                         </svg>
-                        <span class="inline-block align-middle ms-1 w-[400px] ml-4">
+                        <span className="inline-block align-middle ms-1 w-[400px] ml-4">
                             정부 고시에 따라 국민연금 및 건강보험 보험료 요율이
                             인상되면서, 2026년 1월분 급여부터 급여 공제 금액에
                             일부 변동이 생기게 되어 미리 안내드립니다.
@@ -417,7 +417,7 @@ function Guide() {
                 <div className="title1">비쥬얼 컨셉</div>
                 <div className="title2">Concept Color</div>
 
-                <div class="color_container">
+                <div className="color_container">
                     <div className="colorSample smart_blue">#0466c8</div>
                     <div className="colorSample steel_azure">#0353a4</div>
                     <div className="colorSample regal_navy">#023e7d</div>
@@ -425,7 +425,7 @@ function Guide() {
                     <div className="colorSample prussian_blue2">#001845</div>
                 </div>
 
-                <div class="color_container">
+                <div className="color_container">
                     <div className="colorSample prussian_blue3">#001233</div>
                     <div className="colorSample twilight_indigo">#33415c</div>
                     <div className="colorSample blue_slate">#5c677d</div>

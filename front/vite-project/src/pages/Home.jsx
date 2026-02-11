@@ -3,6 +3,7 @@ import { useAppSetting } from "../contexts/AppSettingContext";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from "@fortawesome/free-regular-svg-icons";
+import { SentryErrorButton } from "./test/sentryTest";
 
 function Home() {
     const userInfo = useAuth();
@@ -40,6 +41,7 @@ function Home() {
             <div className="flex gap-8 h-1/3 min-h-[150px] w-2/3">
                 <div className="bg-gray-800  text-gray-100 shadow-md w-1/3 rounded-md flex ">
                     <div className="text-2xl font-bold m-4">오늘 주문</div>
+                    <SentryErrorButton />
                     <div className="font-bold text-4xl ml-auto mt-auto p-8">
                         24
                     </div>
